@@ -98,8 +98,16 @@ desc "Notify various services about new content"
   task :ping => [:pingomatic, :sitemapgoogle, :sitemapbing] do
 end
 
+desc "Build the site"
+task :build do
+  puts "\n## Buulding site..."
+  status = system("jekyll build")
+  puts status ? "Success" : "Failed"
+end
+
 desc "Commit _site/"
 task :commit do
+  message = ask "Enter your commit message: "
   puts "\n## Staging modified files..."
   status = system("git add -A")
   puts status ? "Success" : "Failed"
@@ -131,5 +139,5 @@ task :push do
 end
 
 desc "Commit and deploy _site/"
-task :deploy => [:commit, :push] do
+task :deploy => [:build, :commit, :push] do
 end
