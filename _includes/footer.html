@@ -1,0 +1,12 @@
+  <!-- Main JS -->
+  {% javascript main %}
+
+  <!-- Custom JS -->
+  {% if page.custom_js %}{{ page.custom_js | javascript }}{% endif %}
+
+  <!-- instantclick.js init -->
+  <script data-no-instant>InstantClick.init();</script>
+
+  <!-- Foundation JS init -->
+  <script data-no-instant>$(document).foundation();</script>
+</html>
