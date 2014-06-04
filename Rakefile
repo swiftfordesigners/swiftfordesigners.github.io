@@ -1,16 +1,27 @@
 require "highline/import"
+require "yaml"
+require "fileutils"
+
+# Load the configuration file
+CONFIG = YAML.load_file("_config.yml")
+
+# Get and parse the date
+DATE = Time.now.strftime("%Y-%m-%d")
+
+# Directories
+POSTS = "_posts"
+DRAFTS = "_drafts"
 
 desc 'create a new draft post'
 task :post do
   title = ask "Enter the title: "
   slug = "#{title.downcase.gsub(/[^\w|']+/, '-')}"
   slug_fixed = "#{slug.gsub(/[^a-zA-Z0-9\-]/, "")}"
-  post_number = "#{1_000 + Random.rand(10_000 - 1_000)}"
 
   file = File.join(
     File.dirname(__FILE__),
     '_drafts',
-    "#{post_number}-#{slug_fixed}.md"
+    "#{slug_fixed}.md"
   )
 
   File.open(file, "w") do |f|
@@ -20,7 +31,6 @@ task :post do
     title: #{title}
     published: false
     categories:
-    number: #{post_number}
     ---
 
     EOS
@@ -31,8 +41,8 @@ end
 
 # rake publish
 desc "Move a post from _drafts to _posts"
-task :pub do
-  extension = CONFIG["post"]["extension"]
+task :publish do
+  extension = "md"
   files = Dir["#{DRAFTS}/*.#{extension}"]
   files.each_with_index do |file, index|
     puts "#{index + 1}: #{file}".sub("#{DRAFTS}/", "")
