@@ -140,7 +140,6 @@ end
 
 desc "Generate and publish blog to master"
 task :deploy => [:generate] do
-  require "highline/import"
   Dir.mktmpdir do |tmp|
     cp_r "_site/.", tmp
 
