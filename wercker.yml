@@ -1,0 +1,19 @@
+box: wercker/rvm
+build:
+  steps:
+    - rvm-use:
+        version: ruby-2.0.0-p481
+    - script:
+        name: nokogiri
+        code: bundle config build.nokogiri --use-system-libraries
+    - bundle-install
+    - script:
+        name: build
+        code: bundle exec jekyll build
+
+deploy:
+  steps:
+    - devinhalladay/gh-pages:
+        token: $GIT_TOKEN
+        domain: swiftfordesigners.net
+        basedir: _site
