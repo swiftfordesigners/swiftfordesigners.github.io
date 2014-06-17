@@ -1,0 +1,54 @@
+/*-----------------------------------*\
+
+  Partial: variables
+
+  All global variables go here!
+
+\*-----------------------------------*/
+
+// Group: Fonts
+$serif: 'ff-more-web-pro' Georgia, Cambria, 'Times New Roman', Times, serif;
+$sans-serif: 'source-sans-pro', Helvetica, sans-serif;
+$monospace: 'fira-mono', Monaco, monospace;
+
+// Group: Unit Sizes
+$base-font-size: (20/16)*100%;
+$baseline-unitless: 28 / (18*($base-font-size/100%));
+$baseline: $baseline-unitless * 1rem;
+
+// Group: Colors
+$white: #fff;
+
+$light-grey: #7B8994;
+$grey: #252525;
+$dark-grey: #111111;
+
+$subtle-grey: #d8dce0;
+
+$loud-color: #121212;
+$quiet-color: rgba($loud-color, 0.5);
+$text-color: $loud-color;
+$heading-color: rgba($loud-color, 0.9);
+
+$accent: saturate(#dd442f, 20%);
+$link-color: #dd442f;
+$link-hover-color: saturate($link-color, 20%);
+$link-visited-color: #dc2e2d;
+$border-color: rgba($text-color, 0.1);
+
+$reversed-background-color: #36363d;
+$reversed-text-color: rgba(white, 0.6);
+$reversed-quiet-color: rgba(white, 0.3);
+$reversed-loud-color: rgba(white, 0.8);
+$reversed-heading-color: rgba(white, 0.7);
+$reversed-link-hover-color: white;
+$reversed-link-color: rgba($reversed-link-hover-color, 0.8);
+$reversed-link-visited-color: rgba($reversed-link-hover-color, 0.8);
+$reversed-border-color: rgba($reversed-text-color, 0.1);
+
+$accent-color: $link-color;
+
+// Group: Breakpoints
+$breakpoint-small: 47.5em;
+$breakpoint-medium: 56em;
+$breakpoint-regular: 75em;

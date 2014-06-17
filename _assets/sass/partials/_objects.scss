@@ -1,0 +1,19 @@
+/*-----------------------------------*\
+
+  Partial: objects
+
+  Things that can't be
+  categorized anywhere else.
+
+  Please group like styles with this
+  comment: // Group: {group-name}
+
+\*-----------------------------------*/
+
+.hero {
+  text-align: center;
+  margin-top: 6em;
+  h1 {
+    font-size: $baseline*3;
+  }
+}

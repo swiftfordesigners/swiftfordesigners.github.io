@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<div class="grid">
+  <div class="grid__col grid__col--4-of-12 post__title--container">
+    <h1 class="post__title">{{ page.title | widont }}</h1>
+    {% assign contributor = site.data.contributors[page.author] %}
+
+    <figure><img class="contributor__avatar--full-width-square" src="{{ contributor.avatar }}" alt="{{ contributor.name }}"></figure>
+
+    <p>
+      <span class="meta">{{ content }}</span>
+    </p>
+  </div>
+
+  <div class="grid__col grid__col--8-of-12 contributor__posts">
+    {% for post in site.tags.[page.author] %}
+      <div class="post__summary">
+        <span class="beta bold"><a href="{{ post.url }}" class="a--plain post__summary--title">{{ post.title | widont }}</a></span>
+
+        <div class="post__summary--body emphasis">
+          <p>{{ post.excerpt | strip_newlines | strip_html | truncatewords: 25 | smartypants }} <a class="summary-more" href="{{ post.url }}">Read more…</a></p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>

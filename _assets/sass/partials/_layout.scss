@@ -1,0 +1,17 @@
+/*-----------------------------------*\
+
+  Partial: layout
+
+  Layout rules
+
+\*-----------------------------------*/
+
+@import "grid";
+
+.wrap {
+  max-width: 48rem;
+  margin: 0 auto;
+  @media (max-width: $breakpoint-small) {
+    max-width: 90%;
+  }
+}

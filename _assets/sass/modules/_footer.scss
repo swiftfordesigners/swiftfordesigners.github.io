@@ -1,0 +1,42 @@
+.site__footer {
+  height: 16em;
+  p {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  h3 {
+    font-size: 18px;
+    font-weight: bold;
+    padding-top: 0;
+  }
+  &:before {
+    position: absolute;
+    content: '';
+    background: rgba(0,0,0,0.1);
+    height: 1px;
+    left: 0;
+    right: 0;
+  }
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+    li {
+      padding-left: 0;
+      font-size: 16px;
+    }
+  }
+}
+
+.site__footer--wrapper {
+  max-width: 48rem;
+  margin: 0 auto;
+  padding-top: 4em;
+  padding-bottom: 4em;
+}
+
+.site__footer--site-description,
+.site__footer--site-contributors {
+  @media (max-width: $breakpoint-small) {
+    margin-bottom: 2em;
+  }
+}

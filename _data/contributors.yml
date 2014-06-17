@@ -1,0 +1,34 @@
+devin:
+  name: Devin Halladay
+  slug: devin-halladay
+  website: http://devinhalladay.com/
+  twitter: devinhalladay
+  github: devinhalladay
+  dribbble: devinhalladay
+  avatar: /images/contributors/devin.jpeg
+
+dessy:
+  name: Dessy Chongarova
+  slug: dessy-chongarova
+  website: http://chongarova.com/
+  twitter: des_cho
+  github: descho
+  dribbble: descho
+  avatar: /images/contributors/dessy.jpeg
+
+# devin:
+#   name: Devin Halladay
+#   slug: devin-halladay
+#   website: http://devinhalladay.com/
+#   twitter: devinhalladay
+#   github: devinhalladay
+#   dribbble: devinhalladay
+#   avatar: https://twitter.com/api/users/profile_image/devinhalladay?size=original
+# dessy:
+#   name: Dessy Chongarova
+#   slug: dessy-chongarova
+#   website: http://chongarova.com/
+#   twitter: des_cho
+#   github: descho
+#   dribbble: descho
+#   avatar: https://twitter.com/api/users/profile_image/des_cho?size=original

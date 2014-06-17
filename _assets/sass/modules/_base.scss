@@ -1,0 +1,36 @@
+/*-----------------------------------*\
+
+  Module: Base
+
+  Basic styles that don't really
+  belong in any other modules.
+
+\*-----------------------------------*/
+
+::-moz-selection {
+  background-color: $light-grey;
+}
+
+::selection {
+  background-color: $light-grey;
+}
+
+html {
+  font: 18px/28px $serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1;
+  font-kerning: normal;
+
+  color: #252525;
+  background-color: $white;
+
+  @media (max-width: $breakpoint-small) {
+    font-size: 97.5%;
+  }
+}
+
+.meta {
+  color: $quiet-color;
+}

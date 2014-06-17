@@ -1,0 +1,29 @@
+name: Swift for Designers
+url: http://swiftfordesigners.net
+description: 'The crowd-sourced blog for Swift for Designers!'
+
+timezone: America/New_York
+port: 4200
+
+highlighter: true
+
+markdown: rdiscount
+rdiscount:
+  extensions:
+    - smart
+    - generate_toc
+
+permalink: /:categories/:title
+
+exclude: ['README.md', 'Rakefile', 'Gemfile', 'Gemfile.lock']
+include: ['humans.txt']
+
+category_dir: /
+
+assets:
+  css_compressor: sass
+  sources:
+    - _assets/fonts
+    - _assets/js
+    - _assets/sass
+  gzip: false

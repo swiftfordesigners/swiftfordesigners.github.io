@@ -1,0 +1,186 @@
+/*-----------------------------------*\
+
+  Partial: typography
+
+  Basic type styles
+
+\*-----------------------------------*/
+
+h1, .alpha, %alpha {
+  margin-bottom: $baseline*3;
+  font-family: $sans-serif;
+  font-size: $baseline*1.6;
+  font-weight: 900;
+  line-height: 1;
+  orphans: 3;
+  widows: 3;
+  color: $dark-grey;
+
+  @media (max-width: $breakpoint-small) {
+    margin-bottom: $baseline;
+
+    font-size: $baseline*1.2;
+  }
+
+  .caps {
+    font-family: $sans-serif;
+    letter-spacing: 0;
+  }
+}
+
+h2, .beta, %beta {
+  padding-top: $baseline/2;
+  margin-bottom: $baseline/2;
+
+  font-size: $baseline*1.4;
+  font-weight: 400;
+  line-height: 1.2223;
+  orphans: 3;
+  widows: 3;
+
+  font-family: $sans-serif;
+}
+
+h3, .gamma, %gamma {
+  padding-top: $baseline/2;
+  margin-bottom: $baseline/2;
+
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: $baseline-unitless;
+  font-family: $sans-serif;
+}
+
+h4, .delta, %delta {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: $baseline-unitless;
+  font-family: $sans-serif;
+}
+
+.mega {
+  font-weight: 200;
+  font-size: 2.153846154rem;
+  line-height: 1.178571429;
+}
+
+.subhead, .meta, p.meta {
+  color: $light-grey;
+}
+
+.small {
+  font-size: 16px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.sans {
+  font-family: $sans-serif;
+}
+
+a {
+  text-decoration: underline;
+
+  color: inherit;
+
+  &:hover {
+    color: $accent;
+  }
+}
+
+.a--plain {
+  text-decoration: none;
+}
+
+.caps, %caps {
+  font-family: $serif;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+strong, .strong {
+  font-weight: 700;
+}
+
+em, .em {
+  font-style: italic;
+}
+
+hr {
+  border: none;
+  border-bottom: 2px solid $light-grey;
+  width: 6rem;
+  padding-top: $baseline*1.5;
+  margin: {
+    top: -2px;
+    right: auto;
+    bottom: $baseline*2;
+    left: auto;
+  }
+}
+
+.hr--long {
+  margin-top: -1px;
+  height: 1px;
+
+  background-image: none;
+  background-color: $light-grey;
+}
+
+ul, ol {
+  padding-left: 1.35em;
+  overflow: hidden;
+}
+
+li > ul, li > ol {
+  margin-bottom: 0;
+}
+
+dl {
+  dt {
+    font-weight: 700;
+  }
+
+  dd {
+    padding-left: 1.3rem;
+  }
+}
+
+blockquote {
+  overflow: hidden;
+  font-family: $sans-serif;
+  padding-left: $baseline;
+  border-left: 2px solid $accent-color;
+  margin-left: -$baseline;
+  color: $dark-grey;
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: $breakpoint-small) {
+    margin-left: 0;
+  }
+
+  .caps {
+    font-family: $sans-serif;
+  }
+
+  em {
+    font-style: normal;
+  }
+}
+
+p:not(:last-child) {
+  margin-bottom: 1em;
+}
+
+figcaption {
+  color : $light-grey;
+  font: {
+    size   : 90%;
+    family : $sans-serif;
+  }
+}

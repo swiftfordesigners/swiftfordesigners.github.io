@@ -1,0 +1,31 @@
+  <footer class="wrap site__footer">
+    <div class="site__footer--wrapper">
+      <div class="grid">
+        <div class="grid__col grid__col--5-of-12 site__footer--site-description">
+          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
+        </div>
+        <div class="grid__col grid__col--3-of-12 grid__col--push-1-of-12 site__footer--site-contributors">
+          <h3>Contributors</h3>
+          <ul>
+            {% for contributor in site.data.contributors %}
+              {% assign person = contributor[1] %}
+              <li><a href="/contributors/{{ person.slug }}">{{ person.name }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="grid__col grid__col--3-of-12">
+          <h3>Categories</h3>
+          {% for category in site.categories %}
+            <li><a href="/{{ category[0] }}">{{ category[0] }}</a></li>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JS -->
+  {% javascript main %}
+
+  <!-- Custom JS -->
+  {% if page.custom_js %}{{ page.custom_js | javascript }}{% endif %}
+</html>

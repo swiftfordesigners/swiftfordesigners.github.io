@@ -1,0 +1,42 @@
+{% include header.html %}
+
+<article class="wrap site__content">
+  <div class="grid">
+    <div class="grid__col grid__col--4-of-12">
+      <div class="post__title--container">
+        <h1 class="post__title">{{ page.title | widont }}</h1>
+      </div>
+      <div>
+        {% assign contributor = site.data.contributors[page.author] %}
+
+        {% if contributor %}
+          <p class="meta small sans">
+            Written by <a href="/contributors/{{ contributor.slug }}" target="_blank">{{ contributor.name }}</a>
+          </p>
+        {% endif %}
+
+        <p class="meta small sans">
+          Category: <a href="/{{ page.category }}">{{ page.category | capitalize }}</a>
+        </p>
+
+        {% include share.html url=page.url text=page.share_text %}
+      </div>
+    </div>
+
+    <div class="grid__col grid__col--8-of-12 post__body">{{ content }}</div>
+  </div>
+  <div class="grid">
+    <div class="grid__col grid__col--8-of-12 grid__col--push-4-of-12">
+      <h4 class="meta sans small">Related posts:</h4>
+      <ul>
+        {% for post in site.related_posts %}
+          <li>
+            <a href="{{ post.url }}" class="meta small sans">{{ post.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</article>
+
+{% include footer.html %}

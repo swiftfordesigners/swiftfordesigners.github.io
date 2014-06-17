@@ -1,0 +1,29 @@
+---
+layout: default
+title: Home
+weight: 1
+permalink: /
+---
+<div class="grid">
+  <div class="grid__col grid__col--12-of-12 hero">
+    <h1 class="page__title">Swift for Designers</h1>
+  </div>
+</div>
+
+{% for post in site.posts %}
+  {% assign contributor = site.data.contributors[post.author] %}
+
+  <div class="grid post__summary">
+    <div class="grid__col grid__col--1-of-12 grid__col--push-1-of-12">
+      <a href="/contributors/{{ contributor.slug }}"><img src="{{ contributor.avatar }}" class="contributor__avatar--full-width" alt="{{ contributor.name }}"></a>
+    </div>
+
+    <div class="grid__col grid__col--9-of-12">
+      <span class="beta bold"><a href="{{ post.url }}" class="a--plain post__summary--title">{{ post.title | widont }}</a></span>
+
+      <div class="post__summary--body emphasis">
+        <p>{{ post.excerpt | strip_newlines | strip_html | truncatewords: 25 | smartypants }} <a class="summary-more" href="{{ post.url }}">Read more…</a></p>
+      </div>
+    </div>
+  </div>
+{% endfor %}

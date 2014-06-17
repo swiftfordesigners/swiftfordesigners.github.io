@@ -1,0 +1,18 @@
+---
+layout: page
+---
+<ul class="posts">
+  {% for post in site.categories[page.category] %}
+    {% assign contributor = site.data.contributors[post.author] %}
+
+    <div class="grid post__summary">
+      <div class="grid__col grid__col--11-of-12">
+        <span class="beta bold"><a href="{{ post.url }}" class="a--plain post__summary--title">{{ post.title | widont }}</a></span>
+
+        <div class="post__summary--body emphasis">
+          <p>{{ post.excerpt | strip_newlines | strip_html | truncatewords: 25 | smartypants }} <a class="summary-more" href="{{ post.url }}">Read more…</a></p>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</ul>
