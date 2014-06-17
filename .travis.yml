@@ -6,6 +6,8 @@ install:
 - bundle config build.nokogiri --use-system-libraries
 - bundle install
 script:
+- git config --global user.email "devin@devinhalladay.com"
+- git config --global user.name "Devin Halladay"
 - rake deploy
 env:
   global:
