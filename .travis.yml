@@ -7,7 +7,10 @@ branches:
   - source
 install:
 - bundle config build.nokogiri --use-system-libraries
-- bundle install
+- bundle install --without development --deployment
+cache:
+  directories:
+  - vendor/bundle
 script:
 - git config --global user.email "devin@devinhalladay.com"
 - git config --global user.name "Devin Halladay"
