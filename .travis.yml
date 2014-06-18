@@ -14,7 +14,7 @@ cache:
 script:
 - git config --global user.email "devin@devinhalladay.com"
 - git config --global user.name "Devin Halladay"
-- bundle exec rake deploy
+- rake deploy
 # env:
 #   global:
 #     secure: qJq3kkRk8g64Oppw1Z6BWqiz9Gouzq+YX5Nq0uyBvvcuGfKq44+yoL9dWt0PlyJZkZo50GmH78PGJPELtve8hA++vD4Circ0yMQUDaBPyCy2AdGwHbbWIQKXBAhE8qqSux1oHVOVTWlG5I6C47LMyHvfzyUbn3/do+uOS2tkv1k=
