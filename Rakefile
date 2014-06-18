@@ -7,6 +7,52 @@ require "rubygems"
 require "bundler/setup"
 require "jekyll"
 
+
+desc 'create a contributor'
+task :add_me do
+  require "highline/import"
+  require "httparty"
+
+  firstname = ask "Enter your first name: "
+  nickname = "#{firstname.downcase}"
+  lastname = ask "Enter your last name: "
+  slug = "#{firstname.downcase}-#{lastname.downcase}"
+  site = ask "Enter your website's domain name (no http): "
+  twitter = ask "Enter your Twitter handle: "
+  github = ask "Enter your GitHub username: "
+  dribbble = ask "Enter your Dribbble username: "
+
+  avatar = File.join(
+    File.dirname(__FILE__),
+    'images/contributors',
+    "#{nickname}.jpg"
+  )
+
+  File.open(avatar, "wb") do |f|
+    f.write HTTParty.get("https://twitter.com/api/users/profile_image/#{twitter}?size=original").parsed_response
+  end
+
+  file = File.join(
+    File.dirname(__FILE__),
+    '_data',
+    "contributors.yml"
+  )
+
+  open(file, 'a') do |f|
+    f << <<-EOS.gsub(/^    /, '')
+
+    #{nickname}:
+      name: #{firstname.capitalize} #{lastname.capitalize}
+      slug: #{slug}
+      website: http://#{site}/
+      twitter: #{twitter}
+      github: #{github}
+      dribbble: #{dribbble}
+      avatar: /images/contributors/#{nickname}.jpeg
+    EOS
+  end
+end
+
 # Load the configuration file
 CONFIG = YAML.load_file("_config.yml")
 
@@ -21,12 +67,13 @@ desc 'create a new draft post'
 task :post do
   require "highline/import"
   title = ask "Enter the title: "
-  categories = ask "List the categories this post will fall under: "
+  category = ask "List the category this post will fall under (one only): "
   author = ask "What is your author nickname? "
+  post_text = ask "Enter any initial text (like an idea or thought) here if you have it ready. It will be added to the beginning of your post: "
+  share_text = ask "What text should be shared when people Tweet this post? Please keep it under 100 characters. "
   slug = "#{title.downcase.gsub(/[^\w|']+/, '-')}"
   slug_dashed = "#{slug.gsub(/[^a-zA-Z0-9\-]/, "")}"
   slug_fixed = "#{slug_dashed.gsub(/\-$/, '')}"
-  post_text = ask "Enter any initial text (like an idea or thought) here if you have it ready. It will be added to the beginning of your post: "
 
   file = File.join(
     File.dirname(__FILE__),
@@ -39,8 +86,10 @@ task :post do
     ---
     layout: post
     title: \"#{title}\"
-    categories: \"#{categories}\"
+    category: \"#{category}\"
+    share_text: \"#{share_text}\"
     author: #{author}
+    tags: #{author}
     ---
 
     #{post_text}

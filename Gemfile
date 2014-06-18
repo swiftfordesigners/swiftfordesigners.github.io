@@ -20,3 +20,5 @@ gem 'facets'
 gem 'typogruby'
 
 gem 'liquid'
+
+gem 'httparty'

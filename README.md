@@ -4,19 +4,28 @@ Swift for Designers
 
 This is our blog, where we will share updates, information, techniques, and findings relating to Swift.
 
+***Disclaimer:*** Only submit pull requests, issues, and code changes to the `source` branch. **The master branch is automatically built by Travis CI.**
+
 [![Build Status](https://travis-ci.org/swiftfordesigners/swiftfordesigners.github.io.svg?branch=source)](https://travis-ci.org/swiftfordesigners/swiftfordesigners.github.io)
 
 ## Workflow
 We have our own little workflow for developing and deploying the site. Here's the gist:
 
 ### Spin up the site
-- Clone the source repo locally
+- Fork it!
+- Clone your fork locally.
 - `bundle install`
 - `jekyll serve -w`
 
 ### Posting
 - If you would like to add a post, you need to add it as a draft using `rake post`
-  - You can then enter your desired post title and edit the post in your favorite text editor (we prefer Sublime Text 3)
+  - You'll be prompted to add:
+    - A post title
+    - A single post category
+    - Your author nickname (your first name, all lowercase)
+    - Share text (text that will be added to tweets and other share functions)
+    - Post text (an idea or short blurb to get your post started)
+  - Now you can edit the post in your favorite text editor (we prefer Sublime Text 3)
 - When you're satisfied with your draft, you can publish it by running `rake publish`
   - You will be prompted with a numbered list of posts. Enter the number of the post you want to publish, and it will automatically be moved into the `_posts` folder and a proper publishing date will be predended to the file name.
 - After you publish your post, submit a pull request to the `source` branch. We'll review your post and either approve it, give you feedback to revise it, or deny it.
