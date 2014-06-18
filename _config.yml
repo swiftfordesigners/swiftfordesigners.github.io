@@ -16,7 +16,7 @@ rdiscount:
 permalink: /:categories/:title
 
 exclude: ['README.md', 'Rakefile', 'Gemfile', 'Gemfile.lock']
-include: ['humans.txt']
+include: ['humans.txt', 'images']
 
 category_dir: /
 
