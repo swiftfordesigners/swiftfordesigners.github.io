@@ -4,6 +4,8 @@ Swift for Designers
 
 This is our blog, where we will share updates, information, techniques, and findings relating to Swift.
 
+[![Build Status](https://travis-ci.org/swiftfordesigners/swiftfordesigners.github.io.svg?branch=source)](https://travis-ci.org/swiftfordesigners/swiftfordesigners.github.io)
+
 ## Workflow
 We have our own little workflow for developing and deploying the site. Here's the gist:
 
@@ -31,4 +33,4 @@ In order to contribute, you need to follow some specific steps:
 3. Check your changed files into Git: `git add .`
 4. Commit your changes: `git commit -am 'Adding an awesome feature'
 5. Push the new branch to your forked repo: `git push origin my-awesome-feature`
-6. Create a pull request to merge your feature branch into our source branch.[![Build Status](https://travis-ci.org/swiftfordesigners/swiftfordesigners.png?branch=master)](https://travis-ci.org/swiftfordesigners/swiftfordesigners)
+6. Create a pull request to merge your feature branch into our source branch.
