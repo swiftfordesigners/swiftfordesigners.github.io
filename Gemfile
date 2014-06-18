@@ -11,7 +11,7 @@ gem 'compass'
 
 gem 'json'
 gem 'nokogiri'
-gem 'rake', '10.2.2'
+gem 'rake'
 gem 'mini_magick'
 gem 'fileutils'
 gem 'highline'
