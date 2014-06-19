@@ -52,6 +52,8 @@ h3, .gamma, %gamma {
 }
 
 h4, .delta, %delta {
+  margin-bottom: $baseline/3;
+
   font-size: 1rem;
   font-weight: 700;
   line-height: $baseline-unitless;
