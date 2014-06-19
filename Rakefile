@@ -91,6 +91,32 @@ task :add_me do
   puts "You can now contribute to the site with your author nickname (#{nickname})."
 end
 
+##################################################
+# Add a new resource.
+##################################################
+
+desc 'Add a new resource entry to the resources datafile.'
+task :resource do
+  title       = ask "Enter the resource's tite: "
+  description = ask "Enter a short description of the resource: "
+  link        = ask "Enter the link to the resource: "
+
+  file = File.join(
+    File.dirname(__FILE__),
+    '_data',
+    'resources.yml'
+  )
+
+  open(file, 'a') do |f|
+    f << <<-EOS.gsub(/^    /, '')
+
+    - title: "#{title}"
+      description: "#{description}"
+      link: "#{link}"
+    EOS
+  end
+end
+
 # Get and parse the date
 DATE = Time.now.strftime("%Y-%m-%d")
 
