@@ -48,9 +48,32 @@ task :add_me do
       twitter: #{twitter}
       github: #{github}
       dribbble: #{dribbble}
-      avatar: /images/contributors/#{nickname}.jpeg
+      avatar: /images/contributors/#{nickname}.jpg
     EOS
   end
+
+  Dir.mkdir "contributors/#{slug}"
+
+  index_file = File.join(
+    File.dirname(__FILE__),
+    "contributors/#{slug}",
+    "index.md"
+  )
+
+  contributor_bio = ask "Enter a short author bio here: "
+
+  open(index_file, 'w') do |f|
+    f << <<-EOS.gsub(/^    /, '')
+    ---
+    layout: contributor
+    title: #{firstname.capitalize} #{lastname.capitalize}
+    author: #{nickname}
+    ---
+    #{contributor_bio}
+    EOS
+  end
+
+  puts "Contributor profile created!"
 end
 
 # Load the configuration file
