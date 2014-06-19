@@ -1,3 +1,5 @@
+# Requiring some gems.
+
 require "yaml"
 require "fileutils"
 require "tmpdir"
