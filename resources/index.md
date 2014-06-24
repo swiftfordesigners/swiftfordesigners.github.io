@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Resources
-weight: 4
+weight: 5
 permalink: /resources/
 ---
 {% for resource in site.data.resources %}

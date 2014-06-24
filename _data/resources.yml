@@ -2,3 +2,7 @@
 - title: "The Swift Programming Language"
   description: "Apple's free iBook textbook for learning the Swift programming language. <strong>This is a must-read if you want to learn Swift.</strong>"
   link: "https://itunes.apple.com/us/book/the-swift-programming-language/id881256329"
+
+- title: "Swift Cheat Sheet"
+  description: "A short guide to using Apple's new programming language, Swift."
+  link: "https://www.gitbook.io/book/mhm5000/swift-cheat-sheet"

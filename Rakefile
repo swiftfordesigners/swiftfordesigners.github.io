@@ -97,6 +97,7 @@ end
 
 desc 'Add a new resource entry to the resources datafile.'
 task :resource do
+  # Define resource variables by prompting.
   title       = ask "Enter the resource's tite: "
   description = ask "Enter a short description of the resource: "
   link        = ask "Enter the link to the resource: "
@@ -129,7 +130,7 @@ task :post do
   # Define post variables by prompting.
   title       = ask "Enter the title: "
   category    = ask "List the category this post will fall under (one only): "
-  author      = ask "What is your author nickname? "
+  author      = ask "What is your first name? "
   post_text   = ask "Enter any initial text (like an idea or thought) here if you have it ready. It will be added to the beginning of your post: "
   share_text  = ask "What text should be shared when people Tweet this post? Please keep it under 100 characters. "
   slug        = "#{title.downcase.gsub(/[^\w|']+/, '-')}"
@@ -152,7 +153,7 @@ task :post do
     title: \"#{title}\"
     category: \"#{category}\"
     share_text: \"#{share_text}\"
-    author: #{author}
+    author: #{author.downcase}
     tags: #{author}
     ---
 
