@@ -6,3 +6,7 @@
 - title: "Swift Cheat Sheet"
   description: "A short guide to using Apple's new programming language, Swift."
   link: "https://www.gitbook.io/book/mhm5000/swift-cheat-sheet"
+
+- title: "Swift Toolbox"
+  description: "A community-supported catalog of iOS and OS X libraries written in the Swift Programming Language."
+  link: "http://www.swifttoolbox.io/"
