@@ -12,9 +12,9 @@ before_install:
 - bundle config build.nokogiri --use-system-libraries
 - gem install bundle_cache
 - bundle_cache_install
-install:
-- bundle config build.nokogiri --use-system-libraries
-- bundle install
+# install:
+# - bundle config build.nokogiri --use-system-libraries
+# - bundle install
 script:
 - git config --global user.email "devin@devinhalladay.com"
 - git config --global user.name "Devin Halladay"
