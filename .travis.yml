@@ -17,7 +17,7 @@ before_install:
 # install:
 # - bundle config build.nokogiri --use-system-libraries
 # - bundle install
-install: bundle install --without development --path=~/.bundle
+# install: bundle install --without development --path=~/.bundle
 script:
 - git config --global user.email "devin@devinhalladay.com"
 - git config --global user.name "Devin Halladay"
