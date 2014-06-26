@@ -1,12 +1,12 @@
 language: ruby
 cache:
   bundler: true
-
 rvm:
 - 2.0.0-p451
 branches:
   only:
   - source
+bundler_args: --without development --path=~/.bundle
 before_install:
 - 'echo ''gem: --no-ri --no-rdoc'' > ~/.gemrc'
 - gem install bundler
